@@ -1,6 +1,14 @@
-venv/
-data/
-artifacts/
-.ipynb_checkpoints/
+# Δεδομένα: αγνοούνται τα περιεχόμενα, κρατιούνται μόνο τα .gitkeep
+/data/raw/*
+!/data/raw/.gitkeep
+/data/processed/*
+!/data/processed/.gitkeep
+
+# Εκπαιδευμένα μοντέλα
+/artifacts/*
+!/artifacts/.gitkeep
+
+# Python
+/venv/
 __pycache__/
 *.pyc
