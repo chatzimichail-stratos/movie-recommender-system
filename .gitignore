@@ -1,8 +1,5 @@
-# Δεδομένα: αγνοούνται τα περιεχόμενα, κρατιούνται μόνο τα .gitkeep
-/data/raw/*
-!/data/raw/.gitkeep
-/data/processed/*
-!/data/processed/.gitkeep
+# Δεδομένα: δεν χρειάζεται .gitkeep γιατί τα φτιάχνει το script "src/data/download_data.py"
+/data/
 
 # Εκπαιδευμένα μοντέλα
 /artifacts/*
