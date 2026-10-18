@@ -3,6 +3,7 @@ numpy
 scipy
 pyarrow
 requests
+certifi
 tqdm
 matplotlib
 seaborn

@@ -15,10 +15,15 @@ def download_and_extract():
     
     if not os.path.exists(zip_path):
         print("Κατέβασμα MovieLens dataset...")
+        
+        # Δημιουργούμε SSL context με τα certificates του certifi και το εγκαθιστούμε
+        # ως προεπιλογή για το urllib, ώστε το urlretrieve να επαληθεύει σωστά το HTTPS
+        # (λύνει το CERTIFICATE_VERIFY_FAILED στα Windows χωρίς να απενεργοποιεί τον έλεγχο ασφαλείας) 
         context = ssl.create_default_context(cafile=certifi.where())
         opener = urllib.request.build_opener(urllib.request.HTTPSHandler(context=context))
         urllib.request.install_opener(opener)
         urllib.request.urlretrieve(MOVIELENS_URL, zip_path)
+
         print("Αποσυμπίεση...")
         with zipfile.ZipFile(zip_path, 'r') as zip_ref:
             zip_ref.extractall(RAW_DIR)
